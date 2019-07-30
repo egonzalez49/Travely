@@ -1,0 +1,166 @@
+@import url('https://fonts.googleapis.com/css?family=Titillium+Web:400,700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Rozha+One&display=swap');
+
+@import 'form';
+@import 'auth';
+@import 'nav';
+
+$black: rgb(51, 51, 51);
+$white: #ffffff;
+$primaryColor: #ff7d87;
+$font-family: 'Titillium Web', sans-serif;
+
+* {
+  box-sizing: border-box;
+}
+
+body,
+html,
+.dummy-container {
+  color: $black;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100vh;
+  font-family: $font-family;
+  overflow: hidden;
+}
+
+h2 {
+  margin: 0;
+}
+
+a,
+a:visited,
+a:active,
+a:hover {
+  color: $black;
+  text-decoration: none;
+}
+
+p,
+blockquote {
+  font-size: 1em;
+  line-height: 1.8em;
+}
+
+.base-container {
+  padding: 1.2em;
+  width: 80%;
+  height: 100vh;
+  margin: 0 auto;
+}
+
+button {
+  padding: 0.7em 2em;
+  cursor: pointer;
+  border: none;
+  border-radius: 30px;
+  font-size: 1em;
+  font-family: $font-family;
+  font-weight: 700;
+  transition: all 0.2s ease-in-out;
+}
+
+button:hover {
+  transform: scale(1.05);
+}
+
+button:focus {
+  outline: none;
+}
+
+.logo-image {
+  width: 10%;
+  padding-top: 5px;
+}
+
+.home-container {
+  height: 100vh;
+  margin-top: 4em;
+  display: flex;
+  justify-content: space-between;
+
+  h1 {
+    font-family: 'Rozha One', serif;
+    font-size: 4em;
+    margin-top: 0.72em;
+    margin-bottom: 0;
+    padding: 0;
+  }
+
+  .sub-text {
+    width: 60%;
+    margin-top: 3em;
+    margin-bottom: 4.5em;
+    padding: 0;
+    color: $white;
+  }
+
+  .home-image {
+    width: 80%;
+    max-width: 100%;
+    height: auto;
+  }
+
+  button {
+    width: 30%;
+    color: $white;
+    background: rgb(255, 125, 135);
+    background: linear-gradient(
+      137deg,
+      rgba(255, 125, 135, 1) 0%,
+      rgba(195, 79, 118, 1) 100%
+    );
+  }
+
+  .vertical-dots {
+    position: absolute;
+    bottom: 12%;
+    left: 1%;
+  }
+
+  .horizontal-dots {
+    position: absolute;
+    top: 1%;
+    left: 48%;
+  }
+}
+
+.absolute-image {
+  img {
+    position: absolute;
+    z-index: -1;
+    // left: -65px;
+    right: 11.1%;
+    bottom: -12%;
+  }
+}
+
+.absolute-social {
+  ul {
+    list-style-type: none;
+    margin: 0;
+    margin-bottom: 2em;
+    padding: 0;
+    position: absolute;
+    right: 4.6%;
+    bottom: 8%;
+
+    li {
+      cursor: pointer;
+      margin-bottom: 2em;
+    }
+  }
+}
+
+input[type='text'] {
+  display: block;
+  font-family: $font-family;
+  font-size: 1em;
+}
+
+textrea:focus,
+input:focus {
+  outline: none;
+}

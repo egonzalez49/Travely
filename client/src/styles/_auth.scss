@@ -1,0 +1,26 @@
+.auth-gradient {
+  position: absolute;
+  z-index: -1;
+  right: 0;
+  bottom: 0;
+}
+
+.auth-image {
+  display: block;
+  position: absolute;
+  width: auto;
+  height: auto;
+  bottom: -6%;
+  right: 40%;
+}
+
+.auth-field {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 8em;
+  text-align: end;
+}
+
+.auth-form {
+  width: 28%;
+}
