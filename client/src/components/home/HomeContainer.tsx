@@ -3,10 +3,8 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { setSignUp } from '../../actions';
 import homeImage from '../../styles/images/home-image.png';
-import homeGradient from '../../styles/images/home-gradient.svg';
-import facebook from '../../styles/images/facebook.svg';
-import twitter from '../../styles/images/twitter.svg';
-import instagram from '../../styles/images/instagram.svg';
+import aboutGradient from '../../styles/images/about-gradient.svg';
+
 import horizontalDots from '../../styles/images/dots-horizontal.svg';
 import verticalDots from '../../styles/images/dots-vertical.svg';
 
@@ -30,7 +28,10 @@ class HomeContainer extends React.Component<HomeProps> {
               attractions at each location.
             </p>
             <Link to="/auth">
-              <button onClick={() => this.props.setSignUp(true)}>
+              <button
+                className="button"
+                onClick={() => this.props.setSignUp(true)}
+              >
                 Get Started
               </button>
             </Link>
@@ -48,20 +49,7 @@ class HomeContainer extends React.Component<HomeProps> {
           />
         </div>
         <div className="absolute-image">
-          <img src={homeGradient} alt="gradient" />
-        </div>
-        <div className="absolute-social">
-          <ul>
-            <li>
-              <img src={facebook} alt="facebook icon" />
-            </li>
-            <li>
-              <img src={instagram} alt="instagram icon" />
-            </li>
-            <li>
-              <img src={twitter} alt="twitter icon" />
-            </li>
-          </ul>
+          <img src={aboutGradient} alt="gradient" />
         </div>
       </div>
     );

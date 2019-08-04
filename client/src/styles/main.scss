@@ -4,6 +4,9 @@
 @import 'form';
 @import 'auth';
 @import 'nav';
+@import 'dash';
+@import 'location';
+@import 'review';
 
 $black: rgb(51, 51, 51);
 $white: #ffffff;
@@ -23,7 +26,6 @@ html,
   width: 100%;
   height: 100vh;
   font-family: $font-family;
-  overflow: hidden;
 }
 
 h2 {
@@ -51,7 +53,7 @@ blockquote {
   margin: 0 auto;
 }
 
-button {
+.button {
   padding: 0.7em 2em;
   cursor: pointer;
   border: none;
@@ -62,32 +64,34 @@ button {
   transition: all 0.2s ease-in-out;
 }
 
-button:hover {
+.button:hover {
   transform: scale(1.05);
 }
 
-button:focus {
+.button:focus {
   outline: none;
 }
 
 .logo-image {
   width: 10%;
-  padding-top: 5px;
+  position: relative;
+  top: 3px;
+  margin-right: 5px;
+}
+
+h1 {
+  font-family: 'Rozha One', serif;
+  font-size: 4em;
+  margin-top: 0.72em;
+  margin-bottom: 0;
+  padding: 0;
 }
 
 .home-container {
-  height: 100vh;
+  overflow: hidden;
   margin-top: 4em;
   display: flex;
   justify-content: space-between;
-
-  h1 {
-    font-family: 'Rozha One', serif;
-    font-size: 4em;
-    margin-top: 0.72em;
-    margin-bottom: 0;
-    padding: 0;
-  }
 
   .sub-text {
     width: 60%;
@@ -98,9 +102,10 @@ button:focus {
   }
 
   .home-image {
-    width: 80%;
     max-width: 100%;
+    max-height: 80%;
     height: auto;
+    margin-right: 4em;
   }
 
   button {
@@ -123,7 +128,8 @@ button:focus {
   .horizontal-dots {
     position: absolute;
     top: 1%;
-    left: 48%;
+    right: 44%;
+    z-index: -1;
   }
 }
 
@@ -133,7 +139,7 @@ button:focus {
     z-index: -1;
     // left: -65px;
     right: 11.1%;
-    bottom: -12%;
+    top: 28%;
   }
 }
 
@@ -154,13 +160,29 @@ button:focus {
   }
 }
 
-input[type='text'] {
-  display: block;
+input[type='text'],
+textarea {
   font-family: $font-family;
   font-size: 1em;
 }
 
-textrea:focus,
+textarea {
+  resize: none;
+}
+
+textarea:focus,
 input:focus {
   outline: none;
+}
+
+.vertical-dots-alt {
+  position: absolute;
+  bottom: 12%;
+  right: 1%;
+}
+
+.horizontal-dots-alt {
+  position: absolute;
+  top: 1%;
+  right: 49%;
 }

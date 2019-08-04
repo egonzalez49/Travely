@@ -33,6 +33,40 @@ class FormField extends React.Component<FormFieldProps> {
       });
   };
 
+  renderField = () => {
+    const { placeholder } = this.props.field;
+
+    if (this.props.field.textArea) {
+      return (
+        <textarea
+          name={this.props.field.label}
+          className={
+            this.props.error[placeholder]
+              ? 'input-error form-input'
+              : 'form-input'
+          }
+          placeholder={placeholder}
+          onChange={this.props.onChangeValue}
+          rows={4}
+        />
+      );
+    } else {
+      return (
+        <input
+          name={this.props.field.label}
+          className={
+            this.props.error[placeholder]
+              ? 'input-error form-input'
+              : 'form-input'
+          }
+          type={this.props.field.type ? this.props.field.type : 'text'}
+          placeholder={placeholder}
+          onChange={this.props.onChangeValue}
+        />
+      );
+    }
+  };
+
   render() {
     if (this.props.field.row) {
       return <div className="form-field-row-container">{this.renderRow()}</div>;
@@ -42,18 +76,7 @@ class FormField extends React.Component<FormFieldProps> {
 
     return (
       <div className="form-field">
-        {/* <label className="form-label">{label}</label> */}
-        <input
-          name={this.props.field.label}
-          className={
-            this.props.error[placeholder]
-              ? 'input-error form-input'
-              : 'form-input'
-          }
-          type="text"
-          placeholder={placeholder}
-          onChange={this.props.onChangeValue}
-        />
+        {this.renderField()}
         {this.props.error[placeholder] ? (
           <p className="form-error">{this.props.error[placeholder]}</p>
         ) : null}

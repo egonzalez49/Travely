@@ -1,6 +1,7 @@
 import { Format, Default, Property, Email } from '@tsed/common';
-import { Model, ObjectID } from '@tsed/mongoose';
+import { Model, ObjectID, VirtualRef, VirtualRefs } from '@tsed/mongoose';
 import bcrypt from 'bcrypt';
+import { ReviewModel } from './ReviewModel';
 
 @Model()
 export class UserModel {
@@ -18,6 +19,9 @@ export class UserModel {
 
   @Property()
   password: string;
+
+  @VirtualRef('ReviewModel')
+  reviews: VirtualRefs<ReviewModel>;
 
   @Format('date-time')
   @Default(Date.now)

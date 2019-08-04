@@ -5,6 +5,8 @@ export interface FormItem {
   label: string;
   placeholder?: string;
   row?: FormItem[];
+  type?: string;
+  textArea?: boolean;
 }
 
 interface FormProps {
@@ -116,7 +118,7 @@ class FormCreator extends React.Component<FormProps> {
         {this.props.formError ? (
           <p className="form-error form-error-submit">{this.props.formError}</p>
         ) : null}
-        <button onClick={this.onClick} className="form-button-green">
+        <button onClick={this.onClick} className="form-button-green button">
           {this.props.buttonText}
         </button>
       </form>

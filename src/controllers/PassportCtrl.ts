@@ -73,9 +73,8 @@ export class PassportCtrl {
   public logout(
     @Req() request: Express.Request,
     @Res() response: Express.Response
-  ): string {
+  ) {
     request.logout();
-    return 'Disconnected';
   }
 
   @Get('/current_user')

@@ -1,0 +1,51 @@
+.review-container {
+  margin-top: 2.8em;
+}
+
+.h2-big-b {
+  border-bottom: 2px solid $black;
+  margin-bottom: 0.9em;
+  font-size: 32px;
+}
+
+.review-number {
+  color: $grey;
+  display: inline-block;
+  margin: 0;
+  margin-left: 1em;
+  position: relative;
+  bottom: 0.6em;
+}
+
+.leave-review {
+  margin-bottom: 0em;
+}
+
+.flex-review {
+  display: flex;
+  justify-content: space-between;
+
+  .button {
+    margin-top: 0.4em;
+    width: 100%;
+  }
+
+  .textarea-div {
+    width: 73%;
+  }
+
+  .rating-error {
+    border: 2px $red solid;
+  }
+}
+
+.rating-textarea {
+  margin-bottom: 1em;
+  margin-top: 1em;
+  border: 2px $black solid;
+  width: 100%;
+  border-radius: 30px;
+  padding: 0.7em 1.2em;
+  background: none;
+  color: $black;
+}

@@ -5,6 +5,8 @@ import LoginForm from './LoginForm';
 import authGradient from '../../styles/images/auth-gradient.svg';
 import authImage from '../../styles/images/auth-image.png';
 import RegisterForm from './RegisterForm';
+import horizontalDots from '../../styles/images/dots-horizontal.svg';
+import verticalDots from '../../styles/images/dots-vertical.svg';
 
 interface AuthProps {
   renderSignUp: boolean;
@@ -26,6 +28,16 @@ class AuthContainer extends React.Component<AuthProps> {
           className="auth-image"
           src={authImage}
           alt="man diving into ocean"
+        />
+        <img
+          className="vertical-dots-alt"
+          src={verticalDots}
+          alt="vertical design dots"
+        />
+        <img
+          className="horizontal-dots-alt"
+          src={horizontalDots}
+          alt="horizontal design dots"
         />
       </div>
     );

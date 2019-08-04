@@ -1,0 +1,89 @@
+$black: rgb(51, 51, 51);
+
+/* LOCATION HEADER CSS */
+.location-header {
+  color: $white;
+  margin-top: 8%;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.location-header-image {
+  margin-right: 5%;
+}
+
+.location-header-div {
+  border-bottom: 1px solid white;
+}
+
+.location-header-name {
+  font-size: 2.5em;
+  display: inline;
+  margin-right: 1em;
+}
+
+.button {
+  width: 30%;
+  color: $white;
+  background: rgb(255, 125, 135);
+  background: linear-gradient(
+    137deg,
+    rgba(255, 125, 135, 1) 0%,
+    rgba(195, 79, 118, 1) 100%
+  );
+}
+
+/* ATTRACTIONS */
+.location-attractions-container {
+  margin-top: 2.8em;
+  color: $white;
+  font-size: 1.3em;
+}
+
+.h2-big-w {
+  border-bottom: 1px solid white;
+  margin-bottom: 0.9em;
+}
+
+.location-attractions {
+  display: flex;
+  color: $black;
+  justify-content: space-between;
+}
+
+.attraction {
+  display: inline-block;
+  width: 30%;
+
+  img {
+    margin: 0 auto;
+    max-width: 100%;
+    cursor: pointer;
+    -webkit-transition: 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    // box-shadow: 2px -1px 19px 5px rgba(0, 0, 0, 0.21);
+    // -webkit-box-shadow: 2px -1px 19px 5px rgba(0, 0, 0, 0.21);
+    // -moz-box-shadow: 2px -1px 19px 5px rgba(0, 0, 0, 0.21);
+  }
+
+  img:hover {
+    transform: scale(1.1);
+    box-shadow: none;
+  }
+}
+
+.selected {
+  border: 3px $primaryColor solid;
+}
+
+.attraction-detail {
+  color: $black;
+}
+
+/* FIRST GRADIENT */
+.header-gradient {
+  position: absolute;
+  left: 20%;
+  top: 12%;
+  z-index: -1;
+}

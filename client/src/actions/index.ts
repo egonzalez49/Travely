@@ -1,6 +1,7 @@
 import axios from 'axios';
 import { AuthActionTypes } from './types';
 import { Dispatch } from 'redux';
+export * from './locations';
 
 export const setSignUp = (value: boolean) => {
   return {
@@ -9,17 +10,18 @@ export const setSignUp = (value: boolean) => {
   };
 };
 
-export const userLogin = userInfo => (dispatch: Dispatch) => {
-  console.log(userInfo);
+export const userLogin = (userInfo, history) => (dispatch: Dispatch) => {
   axios
     .post('/rest/auth/login', userInfo)
     .then(res => {
+      history.push('/dashboard');
       dispatch({
         type: AuthActionTypes.userUpdate,
         payload: res.data
       });
     })
     .catch(err => {
+      console.log(err);
       dispatch({
         type: AuthActionTypes.error,
         payload: err.response.data
@@ -34,11 +36,11 @@ export const clearError = () => {
   };
 };
 
-export const userRegister = userInfo => (dispatch: Dispatch) => {
-  console.log(userInfo);
+export const userRegister = (userInfo, history) => (dispatch: Dispatch) => {
   axios
     .post('/rest/auth/signup', userInfo)
     .then(res => {
+      history.push('/dashboard');
       dispatch({
         type: AuthActionTypes.userUpdate,
         payload: res.data
@@ -50,4 +52,14 @@ export const userRegister = userInfo => (dispatch: Dispatch) => {
         payload: err.response.data
       });
     });
+};
+
+export const logout = history => (dispatch: Dispatch) => {
+  axios.get('/rest/auth/logout').then(() => {
+    history.push('/');
+    dispatch({
+      type: AuthActionTypes.userUpdate,
+      payload: null
+    });
+  });
 };

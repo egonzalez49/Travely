@@ -7,6 +7,7 @@ import '@tsed/mongoose';
 const express = require('express');
 // const mongoose = require('mongoose');
 const cookieSession = require('cookie-session');
+const formData = require('express-form-data');
 const Path = require('path');
 
 const keys = require('../config/keys');
@@ -33,7 +34,8 @@ export class Server extends ServerLoader {
           keys: [keys.cookieKey]
         })
       )
-      .use(express.json({ extended: true }));
+      .use(express.json({ extended: true }))
+      .use(formData.parse());
 
     return;
   }

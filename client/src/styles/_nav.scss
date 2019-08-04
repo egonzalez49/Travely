@@ -1,4 +1,6 @@
 $primaryColor: #ff7d87;
+$grey: #95b0b2;
+$black: rgb(51, 51, 51);
 
 .navbar {
   margin-top: 0.8em;
@@ -43,4 +45,23 @@ $primaryColor: #ff7d87;
       transform: scaleX(1);
     }
   }
+}
+
+.search-image {
+  width: 8%;
+}
+
+.profile-icon {
+  width: 60%;
+}
+
+.search-bar {
+  border: none;
+  margin-left: 5px;
+  border-bottom: 2px $grey solid;
+}
+
+.dashnav {
+  border-bottom: 2px solid $black;
+  padding-bottom: 1em;
 }

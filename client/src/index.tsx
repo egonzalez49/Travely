@@ -5,6 +5,8 @@ import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
 import App from './components/App';
 import { reducers } from './reducers';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 import './styles/main.scss';
 
 const composeEnhancers =

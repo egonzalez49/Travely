@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { setSignUp } from '../../actions';
-// import logo from '../../styles/images/logo.svg';
+import logo from '../../styles/images/logo.svg';
 
 interface NavLink {
   name: string;
@@ -65,6 +65,7 @@ class HomeNav extends React.Component<NavProps> {
       <div className="navbar">
         <div>
           {/* <img className="logo-image" src={logo} alt="website logo" /> */}
+          <img className="logo-image" src={logo} alt="logo of website" />
           <h3 className="logo">
             <Link to="/">travely</Link>
           </h3>

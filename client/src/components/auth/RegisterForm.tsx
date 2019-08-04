@@ -1,11 +1,12 @@
 import React from 'react';
+import { withRouter, RouteComponentProps } from 'react-router-dom';
 import FormCreator from '../form/FormCreator';
 import { registerFields } from '../form/formFields';
 import { connect } from 'react-redux';
 import { setSignUp, userRegister, clearError } from '../../actions';
 import { StoreState } from '../../reducers';
 
-interface AuthFormProps {
+interface AuthFormProps extends RouteComponentProps<any> {
   setSignUp: typeof setSignUp;
   userRegister: Function;
   clearError: typeof clearError;
@@ -14,7 +15,7 @@ interface AuthFormProps {
 
 class RegisterForm extends React.Component<AuthFormProps> {
   onClick = values => {
-    this.props.userRegister(values);
+    this.props.userRegister(values, this.props.history);
   };
 
   componentDidMount() {
@@ -54,4 +55,4 @@ const mapStateToProps = (state: StoreState) => {
 export default connect(
   mapStateToProps,
   { setSignUp, userRegister, clearError }
-)(RegisterForm);
+)(withRouter(RegisterForm));

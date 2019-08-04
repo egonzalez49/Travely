@@ -1,20 +1,22 @@
 import React from 'react';
+import { withRouter, RouteComponentProps } from 'react-router-dom';
 import FormCreator from '../form/FormCreator';
 import { loginFields } from '../form/formFields';
 import { connect } from 'react-redux';
 import { setSignUp, userLogin, clearError } from '../../actions';
 import { StoreState } from '../../reducers';
 
-interface AuthFormProps {
+interface AuthFormProps extends RouteComponentProps<any> {
   setSignUp: typeof setSignUp;
   userLogin: Function;
   clearError: typeof clearError;
   error: string | null;
+  history: any;
 }
 
 class LoginForm extends React.Component<AuthFormProps> {
   onClick = values => {
-    this.props.userLogin(values);
+    this.props.userLogin(values, this.props.history);
   };
 
   componentDidMount() {
@@ -55,4 +57,4 @@ const mapStateToProps = (state: StoreState) => {
 export default connect(
   mapStateToProps,
   { setSignUp, userLogin, clearError }
-)(LoginForm);
+)(withRouter(LoginForm));

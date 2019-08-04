@@ -34,3 +34,28 @@ export const registerFields: FormItem[] = [
     placeholder: 'Password'
   }
 ];
+
+export const contactFields: FormItem[] = [
+  {
+    label: 'Name Row',
+    row: [
+      {
+        label: 'firstName',
+        placeholder: 'First Name'
+      },
+      {
+        label: 'lastName',
+        placeholder: 'Last Name'
+      }
+    ]
+  },
+  {
+    label: 'email',
+    placeholder: 'Email'
+  },
+  {
+    label: 'message',
+    placeholder: 'Message',
+    textArea: true
+  }
+];
