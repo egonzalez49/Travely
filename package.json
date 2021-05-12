@@ -23,7 +23,7 @@
   },
   "dependencies": {
     "@tsed/common": "^5.24.1",
-    "@tsed/core": "^5.24.1",
+    "@tsed/core": "^5.65.7",
     "@tsed/di": "^5.24.1",
     "@tsed/mongoose": "^5.24.1",
     "bcrypt": "^3.0.6",
